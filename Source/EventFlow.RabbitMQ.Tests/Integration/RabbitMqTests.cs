@@ -52,13 +52,7 @@ namespace EventFlow.RabbitMQ.Tests.Integration
         [SetUp]
         public void SetUp()
         {
-            var url = Environment.GetEnvironmentVariable("RABBITMQ_URL");
-            if (string.IsNullOrEmpty(url))
-            {
-                Assert.Inconclusive("The environment variable named 'RABBITMQ_URL' isn't set. Set it to e.g. 'amqp://localhost'");
-            }
-
-            _uri = new Uri(url);
+            _uri = new Uri("amqp://ContractingAdmin:Visma.Contracting.Works1!@localhost:5672");
         }
 
         [Test, Timeout(10000), Retry(3)]

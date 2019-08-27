@@ -312,7 +312,7 @@ namespace EventFlow.EntityFramework.ReadStores
 
             private bool IsConcurrencyProperty(IProperty p)
             {
-                return p.IsConcurrencyToken && (p.ClrType == typeof(long) || p.ClrType == typeof(byte[]));
+                return p.IsConcurrencyToken; // && (p.ClrType == typeof(long) || p.ClrType == typeof(byte[]));
             }
 
             private static IProperty GetKeyProperty(IEntityType entityType)
